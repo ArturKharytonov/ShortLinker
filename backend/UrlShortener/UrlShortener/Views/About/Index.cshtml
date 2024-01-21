@@ -1,0 +1,20 @@
+﻿@model string
+
+<p>
+    @Model
+</p>
+
+@if (User.IsInRole("admin"))
+{
+    <button id="editButton" type="button" onclick="showEditPrompt()">Edit button</button>
+
+    <script>
+        function showEditPrompt() {
+            var newContent = prompt('Enter new content: ');
+
+            if (newContent !== null) {
+                console.log('New content:', newContent);
+            }
+        }
+    </script>
+}
